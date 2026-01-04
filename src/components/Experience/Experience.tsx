@@ -55,16 +55,7 @@ export function Experience() {
                 <div className="flex">
                     <StripePattern position="left" />
 
-                    <div className="flex-1 px-4 py-6 space-y-6">
-                        {/* Header */}
-                        {/* <div className="flex items-center justify-between mb-8">
-                            <h2 className="text-3xl md:text-4xl font-bold">Experience</h2>
-                            <div className={`flex items-center gap-2 px-3 py-1.5 rounded-md border ${isDark ? 'border-white/20 text-gray-300' : 'border-gray-700 text-gray-700'
-                                }`}>
-                                <Briefcase size={16} />
-                                <span className="text-sm font-medium">0 Years</span>
-                            </div>
-                        </div> */}
+                    <div className="flex-1 px-2 py-6 space-y-6">
 
                         {/* Experience Timeline */}
                         <div className="space-y-6">
@@ -133,7 +124,11 @@ export function Experience() {
                                                             className={`p-1 rounded hover:bg-white/10 transition-colors ${isDark ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-black'
                                                                 }`}
                                                         >
-                                                            {expandedId === exp.id ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                                                            <motion.div
+                                                                animate={{ rotate: expandedId === exp.id ? 180 : 0 }}
+                                                                transition={{ duration: 0.2 }}>
+                                                                <ChevronDown className={`w-5 h-5 ${isDark ? 'text-zinc-400' : 'text-gray-400'}`} />
+                                                            </motion.div>
                                                         </button>
                                                     </div>
                                                 </div>

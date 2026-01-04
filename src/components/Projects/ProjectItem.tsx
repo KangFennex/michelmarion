@@ -26,7 +26,7 @@ export function ProjectItem({ project, index, isExpanded, onToggle }: ProjectIte
                 ease: [0.4, 0, 0.2, 1],
                 delay: index * 0.05
             }}
-            className={`overflow-hidden  border-b ${isDark ? 'bg-zinc-900/50 border-white/20' : 'border-gray-700'} ${index === 0 && isDark ? 'border-t border-white/20' : ''} ${index === 0 && !isDark ? 'border-t border-gray-700' : ''}`}
+            className={`overflow-hidden  border-b ${isDark ? 'border-white/20' : 'border-gray-700'} ${index === 0 && isDark ? 'border-t border-white/20' : ''} ${index === 0 && !isDark ? 'border-t border-gray-700' : ''}`}
         >
             {/* Project Header */}
             <button
