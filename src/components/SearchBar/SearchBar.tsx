@@ -41,7 +41,7 @@ export function SearchBar({ isOpen, onClose }: SearchBarProps) {
             <div className="mx-auto max-w-2xl px-4 pt-16" onClick={(e) => e.stopPropagation()}>
                 {/* Search Input */}
                 <div
-                    className={`flex items-center gap-3 rounded-lg border px-4 py-3 shadow-xl ${isDark ? 'border-white/20' : 'border-gray-300'
+                    className={`flex items-center gap-3 rounded-lg border px-4 py-3 shadow-xl ${isDark ? 'border-white/20' : 'border-gray-700'
                         }`}
                     style={{
                         background: isDark ? 'hsla(0, 1%, 8%, 0.98)' : 'rgba(249, 250, 251, 0.98)',
@@ -69,7 +69,7 @@ export function SearchBar({ isOpen, onClose }: SearchBarProps) {
 
                 {/* Search Results */}
                 <div
-                    className={`mt-4 rounded-lg border shadow-xl overflow-hidden ${isDark ? 'border-white/20' : 'border-gray-300'
+                    className={`mt-4 rounded-lg border shadow-xl overflow-hidden ${isDark ? 'border-white/20' : 'border-gray-700'
                         }`}
                     style={{
                         background: isDark ? 'hsla(0, 1%, 8%, 0.98)' : 'rgba(249, 250, 251, 0.98)',
@@ -79,7 +79,7 @@ export function SearchBar({ isOpen, onClose }: SearchBarProps) {
                     }}
                 >
                     {/* Pages Section */}
-                    <div className={`p-4 border-b ${isDark ? 'border-white/10' : 'border-gray-200'}`}>
+                    <div className={`p-4 border-b ${isDark ? 'border-white/10' : 'border-gray-700'}`}>
                         <h3 className={`text-xs font-semibold uppercase tracking-wider mb-3 ${isDark ? 'text-gray-500' : 'text-gray-600'
                             }`}>Pages</h3>
                         <div className="space-y-1">
@@ -87,8 +87,8 @@ export function SearchBar({ isOpen, onClose }: SearchBarProps) {
                                 href="#portfolio"
                                 onClick={onClose}
                                 className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors group ${isDark
-                                        ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                                        : 'text-gray-700 hover:text-black hover:bg-gray-200'
+                                    ? 'text-gray-300 hover:text-white hover:bg-gray-800'
+                                    : 'text-gray-700 hover:text-black hover:bg-gray-200'
                                     }`}
                             >
                                 <span className={`group-hover:text-amber-500 ${isDark ? 'text-gray-500' : 'text-gray-400'}`}>→</span>
@@ -98,8 +98,8 @@ export function SearchBar({ isOpen, onClose }: SearchBarProps) {
                                 href="#blog"
                                 onClick={onClose}
                                 className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors group ${isDark
-                                        ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                                        : 'text-gray-700 hover:text-black hover:bg-gray-200'
+                                    ? 'text-gray-300 hover:text-white hover:bg-gray-800'
+                                    : 'text-gray-700 hover:text-black hover:bg-gray-200'
                                     }`}
                             >
                                 <span className={`group-hover:text-amber-500 ${isDark ? 'text-gray-500' : 'text-gray-400'}`}>→</span>
@@ -109,8 +109,8 @@ export function SearchBar({ isOpen, onClose }: SearchBarProps) {
                                 href="#components"
                                 onClick={onClose}
                                 className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors group ${isDark
-                                        ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                                        : 'text-gray-700 hover:text-black hover:bg-gray-200'
+                                    ? 'text-gray-300 hover:text-white hover:bg-gray-800'
+                                    : 'text-gray-700 hover:text-black hover:bg-gray-200'
                                     }`}
                             >
                                 <span className={`group-hover:text-amber-500 ${isDark ? 'text-gray-500' : 'text-gray-400'}`}>→</span>
@@ -128,8 +128,8 @@ export function SearchBar({ isOpen, onClose }: SearchBarProps) {
                                 href="#about"
                                 onClick={onClose}
                                 className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors group ${isDark
-                                        ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                                        : 'text-gray-700 hover:text-black hover:bg-gray-200'
+                                    ? 'text-gray-300 hover:text-white hover:bg-gray-800'
+                                    : 'text-gray-700 hover:text-black hover:bg-gray-200'
                                     }`}
                             >
                                 <span className={`group-hover:text-amber-500 ${isDark ? 'text-gray-500' : 'text-gray-400'}`}>→</span>
@@ -139,8 +139,8 @@ export function SearchBar({ isOpen, onClose }: SearchBarProps) {
                                 href="#experience"
                                 onClick={onClose}
                                 className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors group ${isDark
-                                        ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                                        : 'text-gray-700 hover:text-black hover:bg-gray-200'
+                                    ? 'text-gray-300 hover:text-white hover:bg-gray-800'
+                                    : 'text-gray-700 hover:text-black hover:bg-gray-200'
                                     }`}
                             >
                                 <span className={`group-hover:text-amber-500 ${isDark ? 'text-gray-500' : 'text-gray-400'}`}>→</span>
@@ -150,8 +150,8 @@ export function SearchBar({ isOpen, onClose }: SearchBarProps) {
                                 href="#tech-stack"
                                 onClick={onClose}
                                 className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors group ${isDark
-                                        ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                                        : 'text-gray-700 hover:text-black hover:bg-gray-200'
+                                    ? 'text-gray-300 hover:text-white hover:bg-gray-800'
+                                    : 'text-gray-700 hover:text-black hover:bg-gray-200'
                                     }`}
                             >
                                 <span className={`group-hover:text-amber-500 ${isDark ? 'text-gray-500' : 'text-gray-400'}`}>→</span>
@@ -161,8 +161,8 @@ export function SearchBar({ isOpen, onClose }: SearchBarProps) {
                                 href="#projects"
                                 onClick={onClose}
                                 className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors group ${isDark
-                                        ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                                        : 'text-gray-700 hover:text-black hover:bg-gray-200'
+                                    ? 'text-gray-300 hover:text-white hover:bg-gray-800'
+                                    : 'text-gray-700 hover:text-black hover:bg-gray-200'
                                     }`}
                             >
                                 <span className={`group-hover:text-amber-500 ${isDark ? 'text-gray-500' : 'text-gray-400'}`}>→</span>

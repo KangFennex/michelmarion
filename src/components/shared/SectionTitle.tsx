@@ -11,10 +11,7 @@ export function SectionTitle({ title }: SectionTitleProps) {
 
     return (
         <div
-            className="w-full min-h-11 flex-none border-t border-y"
-            style={{
-                borderColor: isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.15)',
-            }}
+            className={`w-full min-h-11 flex-none border-y ${isDark ? 'border-white/20' : 'border-gray-700'}`}
         >
             <div className="mx-auto md:max-w-4xl max-w-7xl">
                 <div className="flex">

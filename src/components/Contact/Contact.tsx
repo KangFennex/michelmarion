@@ -67,7 +67,7 @@ export function Contact({ buttonText = "Contact" }: ContactModalProps) {
 
     return (
         <>
-            <section className={`w-full border-y ${isDark ? 'border-white/20' : 'border-gray-300'}`}>
+            <section className={`w-full border-t ${isDark ? 'border-white/20' : 'border-gray-700'}`}>
                 <div className="mx-auto md:max-w-4xl max-w-7xl">
                     <div className="flex">
                         <StripePattern position="left" />

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useTheme } from '../../contexts/ThemeContext';
 import { StripePattern } from '../shared';
-import { Briefcase, ChevronDown, X } from 'lucide-react';
+import { Briefcase, ChevronDown, X, Circle, ChevronUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface ExperienceItem {
@@ -20,33 +20,15 @@ const experiences: ExperienceItem[] = [
     {
         id: '1',
         title: 'Frontend Developer',
-        company: 'SoftDef Pvt. Ltd.',
-        type: 'Intern',
-        startDate: '09/2025',
+        company: 'TBA',
+        type: 'Junior Position',
+        startDate: '02/2026',
         endDate: 'Present',
         isCurrentlyWorking: true,
         description: [
-            'Building modern web applications with Next.js and TypeScript.',
-            'Working on complex UI components and state management with Redux.',
-            'Creating seamless user experiences with responsive and performant interfaces.',
-            'Developed reusable component libraries following best practices.',
-            'Collaborated with cross-functional teams to deliver high-quality products.'
         ],
-        technologies: ['TypeScript', 'Next.js', 'React', 'Redux', 'TailwindCSS', 'REST APIs', 'Next.js App Router']
+        technologies: ['TypeScript', 'Next.js', 'React', 'Redux',]
     },
-    {
-        id: '2',
-        title: 'Full Stack Developer',
-        company: 'Rotten Grapes Pvt. Ltd.',
-        type: 'Intern',
-        startDate: '09/2024',
-        endDate: '03/2025',
-        isCurrentlyWorking: false,
-        description: [
-            'Always learning, always growing'
-        ],
-        technologies: []
-    }
 ];
 
 export function Experience() {
@@ -72,10 +54,8 @@ export function Experience() {
             return total + months;
         }, 0);
 
-    const visibleExperiences = experiences.filter(exp => !deletedIds.includes(exp.id));
-
     return (
-        <section className={`w-full border-b ${isDark ? 'border-white/20' : 'border-gray-300'}`}>
+        <section className="w-full">
             <div className="mx-auto md:max-w-4xl max-w-7xl">
                 <div className="flex">
                     <StripePattern position="left" />
@@ -84,42 +64,47 @@ export function Experience() {
                         {/* Header */}
                         <div className="flex items-center justify-between mb-8">
                             <h2 className="text-3xl md:text-4xl font-bold">Experience</h2>
-                            <div className={`flex items-center gap-2 px-3 py-1.5 rounded-md border ${isDark ? 'border-white/20 text-gray-300' : 'border-gray-300 text-gray-700'
+                            <div className={`flex items-center gap-2 px-3 py-1.5 rounded-md border ${isDark ? 'border-white/20 text-gray-300' : 'border-gray-700 text-gray-700'
                                 }`}>
                                 <Briefcase size={16} />
-                                <span className="text-sm font-medium">{totalMonths}+ Months</span>
+                                <span className="text-sm font-medium">0 Years</span>
                             </div>
                         </div>
 
                         {/* Experience Timeline */}
                         <div className="space-y-6">
                             <AnimatePresence>
-                                {visibleExperiences.map((exp, index) => (
+                                {experiences.map((exp, index) => (
                                     <motion.div
                                         key={exp.id}
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         exit={{ opacity: 0, x: -100 }}
                                         transition={{ duration: 0.3 }}
-                                        className={`relative ${index !== visibleExperiences.length - 1 ? 'pb-6' : ''}`}
+                                        className={`relative ${index !== experiences.length - 1 ? 'pb-6' : ''}`}
                                     >
                                         {/* Timeline Line */}
-                                        {index !== visibleExperiences.length - 1 && (
-                                            <div className={`absolute left-[11px] top-8 w-[2px] h-full ${isDark ? 'bg-white/10' : 'bg-gray-300'
+                                        {index !== experiences.length - 1 && (
+                                            <div className={`absolute left-[7px] top-8 w-[2px] h-full ${isDark ? 'bg-white/10' : 'bg-gray-300'
                                                 }`} />
                                         )}
 
                                         {/* Experience Card */}
                                         <div className="flex gap-4">
                                             {/* Timeline Dot */}
-                                            <div className="relative flex-shrink-0">
-                                                <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${exp.isCurrentlyWorking
-                                                        ? 'border-green-500 bg-green-500/20'
-                                                        : isDark ? 'border-white/40 bg-white/10' : 'border-gray-400 bg-gray-200'
-                                                    }`}>
-                                                    <div className={`w-2 h-2 rounded-full ${exp.isCurrentlyWorking ? 'bg-green-500' : isDark ? 'bg-white' : 'bg-gray-600'
-                                                        }`} />
-                                                </div>
+                                            <div className="relative flex-shrink-0 w-4 h-4">
+                                                {exp.isCurrentlyWorking ? (
+                                                    <>
+                                                        <div className="absolute inset-0 rounded-full bg-green-500/50 animate-ping"></div>
+                                                        <Circle className="absolute inset-0 w-2 h-2 fill-green-500 text-green-500 m-auto" />
+                                                    </>
+                                                ) : (
+                                                    <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${isDark ? 'border-white/40 bg-white/10' : 'border-gray-400 bg-gray-200'
+                                                        }`}>
+                                                        <div className={`w-2 h-2 rounded-full ${isDark ? 'bg-white' : 'bg-gray-600'
+                                                            }`} />
+                                                    </div>
+                                                )}
                                             </div>
 
                                             {/* Content */}
@@ -140,7 +125,7 @@ export function Experience() {
                                                     <div className="flex items-center gap-2 flex-shrink-0">
                                                         {exp.isCurrentlyWorking && (
                                                             <span className="px-2 py-1 text-xs font-medium bg-green-500/20 text-green-500 rounded-full flex items-center gap-1">
-                                                                <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
+                                                                <Circle className="w-3 h-3 fill-emerald-500 animate-pulse" />
                                                                 Working
                                                             </span>
                                                         )}
@@ -149,11 +134,11 @@ export function Experience() {
                                                             {exp.startDate} — {exp.endDate}
                                                         </span>
                                                         <button
-                                                            onClick={() => expandedId === exp.id ? handleDelete(exp.id) : toggleExpand(exp.id)}
+                                                            onClick={() => toggleExpand(exp.id)}
                                                             className={`p-1 rounded hover:bg-white/10 transition-colors ${isDark ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-black'
                                                                 }`}
                                                         >
-                                                            {expandedId === exp.id ? <X size={20} /> : <ChevronDown size={20} />}
+                                                            {expandedId === exp.id ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
                                                         </button>
                                                     </div>
                                                 </div>
@@ -187,8 +172,8 @@ export function Experience() {
                                                                             <span
                                                                                 key={tech}
                                                                                 className={`px-3 py-1 text-xs md:text-sm rounded-md ${isDark
-                                                                                        ? 'bg-white/10 text-gray-300'
-                                                                                        : 'bg-gray-200 text-gray-700'
+                                                                                    ? 'bg-white/10 text-gray-300'
+                                                                                    : 'bg-gray-200 text-gray-700'
                                                                                     }`}
                                                                             >
                                                                                 {tech}

@@ -12,14 +12,14 @@ export function About() {
   const isDark = theme === 'dark';
 
   return (
-    <section className={`w-full border-y ${isDark ? 'border-white/20' : 'border-gray-300'}`}>
+    <section className="w-full">
       <div className="mx-auto md:max-w-4xl max-w-7xl">
         <div className="flex">
           <StripePattern position="left" />
 
           <div className="flex-1 px-4 py-6 space-y-6">
 
-            <ul className="space-y-3 text-gray-300">
+            <ul className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
               {content.map((item, index) => (
                 <li key={index} className="flex gap-3">
                   <span className="text-white">•</span>

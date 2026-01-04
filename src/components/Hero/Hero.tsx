@@ -40,7 +40,7 @@ export function Hero() {
     }, []);
 
     return (
-        <section className={`relative w-full border-b ${isDark ? 'border-white/20' : 'border-gray-300'}`}>
+        <section className="relative w-full">
             <div className="mx-auto md:max-w-4xl max-w-7xl">
                 <div className="flex">
                     <StripePattern position="left" />
@@ -77,11 +77,10 @@ export function Hero() {
                         </div>
 
                         {/* Content Section Below Images */}
-                        <div className="flex items-start gap-4 px-2">
-
+                        <div className="flex items-start gap-4 px-2 md:mb-2">
                             {/* Profile Image */}
                             <div className="flex-shrink-0">
-                                <div className="relative h-35 w-35 rounded-full shadow-2xl">
+                                <div className="relative h-30 w-30 md:h-35 md:w-35 rounded-full shadow-2xl">
                                     <div className={`h-full w-full rounded-full overflow-hidden flex items-center justify-center ${isDark ? 'bg-black' : 'bg-white'
                                         }`}>
                                         <img src={avatar} alt="Avatar" className="h-full w-full object-cover" />

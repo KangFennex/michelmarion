@@ -52,13 +52,7 @@ export function Nav() {
     return (
         <>
             <header
-                className={`w-full border-y md:px-2 transition-colors duration-300 ${isDark ? 'border-y-white/20' : 'border-y-gray-300'}`}
-            >
-                {/* Solid background layer */}
-                <div
-                    className={`absolute inset-0 ${isDark ? '' : ''}                         backdropFilter: 'blur(20px)',`}
-                />
-
+                className={`w-full border-y md:px-2 transition-colors duration-300 ${isDark ? 'border-y-white/20' : ' border-y-black-300'}`}>
                 <div className="mx-auto md:max-w-4xl flex w-full max-w-7xl relative">
                     <StripePattern position="left" />
 
@@ -88,7 +82,7 @@ export function Nav() {
                             {/* Search Button */}
                             <button
                                 onClick={() => setIsSearchOpen(true)}
-                                className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 hover:border-amber-500 transition-colors duration-300 ${isDark ? 'border-white/20 bg-gray-900/40' : 'border-gray-300 bg-gray-100'
+                                className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 hover:border-amber-500 transition-colors duration-300 ${isDark ? 'border-white/20 bg-gray-900/40' : 'border-gray-700 bg-gray-100'
                                     }`}
                             >
                                 <Search size={16} className={isDark ? 'text-gray-400' : 'text-gray-600'} />
