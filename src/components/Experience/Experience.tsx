@@ -35,7 +35,6 @@ export function Experience() {
     const { theme } = useTheme();
     const isDark = theme === 'dark';
     const [expandedId, setExpandedId] = useState<string>('1');
-    const [deletedIds, setDeletedIds] = useState<string[]>([]);
 
     const toggleExpand = (id: string) => {
         setExpandedId(expandedId === id ? '' : id);
