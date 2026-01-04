@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useTheme } from '../../contexts/ThemeContext';
 import { StripePattern } from '../shared';
-import { Briefcase, ChevronDown, X, Circle, ChevronUp } from 'lucide-react';
+import { Briefcase, ChevronDown, Circle, ChevronUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface ExperienceItem {
