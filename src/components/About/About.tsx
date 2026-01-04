@@ -2,9 +2,9 @@ import { useTheme } from '../../contexts/ThemeContext';
 import { StripePattern } from '../shared';
 
 const content: string[] = [
-  "Used React.js, Next.js and TypeScript extensively across multiple projects.",
-  "Good understanding of SSR and CSR in Next.js.",
-  "9+ months of experience in Next.js.",
+  "Used React.js, Next.js and TypeScript extensively across multiple projects",
+  "Good understanding of SSR and CSR in Next.js",
+  "9+ months of experience in Next.js",
 ]
 
 export function About() {
