@@ -57,14 +57,14 @@ export function Experience() {
 
                     <div className="flex-1 px-4 py-6 space-y-6">
                         {/* Header */}
-                        <div className="flex items-center justify-between mb-8">
+                        {/*                         <div className="flex items-center justify-between mb-8">
                             <h2 className="text-3xl md:text-4xl font-bold">Experience</h2>
                             <div className={`flex items-center gap-2 px-3 py-1.5 rounded-md border ${isDark ? 'border-white/20 text-gray-300' : 'border-gray-700 text-gray-700'
                                 }`}>
                                 <Briefcase size={16} />
                                 <span className="text-sm font-medium">0 Years</span>
                             </div>
-                        </div>
+                        </div> */}
 
                         {/* Experience Timeline */}
                         <div className="space-y-6">
