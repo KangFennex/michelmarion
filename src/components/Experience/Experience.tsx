@@ -41,18 +41,14 @@ export function Experience() {
         setExpandedId(expandedId === id ? '' : id);
     };
 
-    const handleDelete = (id: string) => {
-        setDeletedIds([...deletedIds, id]);
-    };
-
-    const totalMonths = experiences
-        .filter(exp => !deletedIds.includes(exp.id))
-        .reduce((total, exp) => {
-            const start = new Date(exp.startDate);
-            const end = exp.isCurrentlyWorking ? new Date() : new Date(exp.endDate);
-            const months = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
-            return total + months;
-        }, 0);
+    /*     const totalMonths = experiences
+            .filter(exp => !deletedIds.includes(exp.id))
+            .reduce((total, exp) => {
+                const start = new Date(exp.startDate);
+                const end = exp.isCurrentlyWorking ? new Date() : new Date(exp.endDate);
+                const months = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+                return total + months;
+            }, 0); */
 
     return (
         <section className="w-full">
