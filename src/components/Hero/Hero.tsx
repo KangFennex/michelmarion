@@ -9,7 +9,6 @@ import heroImg3 from '../../assets/heroImgs/manuel-cosentino-n--CMLApjfI-unsplas
 import heroImg4 from '../../assets/heroImgs/allphoto-bangkok-o4ispOaaO48-unsplash.jpg';
 import heroImg5 from '../../assets/heroImgs/evan-wise--Y5CKQ9goZA-unsplash.jpg';
 
-
 const HERO_IMAGES = [
     heroImg1,
     heroImg2,
@@ -17,7 +16,6 @@ const HERO_IMAGES = [
     heroImg4,
     heroImg5,
 ];
-
 
 const HERO_LEAD = [
     "Frontend Developer",

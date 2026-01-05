@@ -135,20 +135,35 @@ export function Contact({ buttonText = "Contact" }: ContactModalProps) {
                                 {showContact && (
                                     <div className="fixed top-0 left-0 w-full h-full bg-black/50 backdrop-blur-sm flex justify-center items-center z-[9999]">
                                         <motion.div
-                                            className={`p-4 md:p-5 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.3)] z-[10000] w-[90%] min-w-[300px] max-w-[1000px] mx-4
-                                    ${isDark ? 'bg-gray-800/90' : 'bg-white/90'}`}
+                                            className={`relative p-4 md:p-5 rounded-lg shadow-[0_0_10px_rgba(0,0,0,0.3)] z-[10000] w-[90%] min-w-[300px] max-w-[1000px] mx-4 overflow-hidden`}
                                             ref={modalRef}
                                             variants={showModal}
                                             initial="hidden"
                                             animate="visible"
                                             exit="exit"
                                         >
-                                            <IoCloseSharp
-                                                size={45}
-                                                onClick={handleClick}
-                                                className={`ml-auto cursor-pointer contact-modal-close ${isDark ? 'text-gray-300' : 'text-gray-900'} hover:opacity-70 transition-opacity`}
+                                            {/* Base background */}
+                                            <div className={`absolute inset-0 rounded-lg ${isDark ? 'bg-black/90' : 'bg-gray-50'}`} />
+
+                                            {/* Grainy texture overlay */}
+                                            <div
+                                                className="pointer-events-none absolute inset-0 rounded-lg"
+                                                style={{
+                                                    backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.3' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+                                                    opacity: 0.06,
+                                                    backgroundColor: 'hsla(0, 1%, 14%, 0.4)'
+                                                }}
                                             />
-                                            <ContactForm />
+
+                                            {/* Content */}
+                                            <div className={`relative ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                                                <IoCloseSharp
+                                                    size={45}
+                                                    onClick={handleClick}
+                                                    className={`ml-auto cursor-pointer contact-modal-close ${isDark ? 'text-gray-300' : 'text-gray-900'} hover:opacity-70 transition-opacity`}
+                                                />
+                                                <ContactForm />
+                                            </div>
                                         </motion.div>
                                     </div>
                                 )}

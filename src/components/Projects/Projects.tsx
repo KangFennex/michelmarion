@@ -40,7 +40,7 @@ export function Projects() {
 
     return (
         <>
-            <section className="w-full">
+            <section className="w-full" id="projects">
                 <div className="mx-auto md:max-w-4xl max-w-7xl">
                     <div className="flex">
                         <StripePattern position="left" />

@@ -42,7 +42,7 @@ export function ProjectItem({ project, index, isExpanded, onToggle }: ProjectIte
                     </h3>
                 </div>
 
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2">
                     <div className="flex items-center gap-3">
                         <span
                             className={`flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium ${project.status === "live"
@@ -57,13 +57,15 @@ export function ProjectItem({ project, index, isExpanded, onToggle }: ProjectIte
                     </div>
 
                     {project.link && (
-                        <ExternalLink className={`w-5 h-5 ${isDark ? 'text-zinc-400' : 'text-gray-400'}`} />
+                        <a href={project.link} target="_blank" rel="noopener noreferrer" className={`rounded-md w-8 h-8 flex items-center justify-center transition-colors ${isDark ? 'hover:bg-gray-700/50' : 'hover:bg-gray-200'}`}>
+                            <ExternalLink className={`w-5 h-5 ${isDark ? 'text-zinc-400' : 'text-gray-400'}`} />
+                        </a>
                     )}
 
                     <motion.div
                         animate={{ rotate: isExpanded ? 180 : 0 }}
                         transition={{ duration: 0.2 }}
-                        className="mr-2"
+                        className={`mr-2 rounded-md w-8 h-8 flex items-center justify-center transition-colors ${isDark ? 'hover:bg-gray-700/50' : 'hover:bg-gray-200'}`}
                     >
                         <ChevronDown className={`w-5 h-5 ${isDark ? 'text-zinc-400' : 'text-gray-400'}`} />
                     </motion.div>

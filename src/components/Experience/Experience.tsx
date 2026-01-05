@@ -50,7 +50,7 @@ export function Experience() {
             }, 0); */
 
     return (
-        <section className="w-full">
+        <section className="w-full" id="experience">
             <div className="mx-auto md:max-w-4xl max-w-7xl">
                 <div className="flex">
                     <StripePattern position="left" />
@@ -121,7 +121,7 @@ export function Experience() {
                                                         </span>
                                                         <button
                                                             onClick={() => toggleExpand(exp.id)}
-                                                            className={`p-1 rounded hover:bg-white/10 transition-colors ${isDark ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-black'
+                                                            className={`p-1 w-8 h-8 rounded flex items-center justify-center transition-colors ${isDark ? 'text-gray-400 hover:bg-gray-700/50' : 'text-gray-600 hover:text-black hover:bg-gray-200'
                                                                 }`}
                                                         >
                                                             <motion.div

@@ -7,8 +7,8 @@ import { useTheme } from '../../contexts/ThemeContext';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const NAV_LINKS = [
-    { name: 'Portfolio', href: '#portfolio' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Experience', href: '#experience' },
 ];
 
 export function Nav() {
@@ -93,7 +93,8 @@ export function Nav() {
                             {/* GitHub Icon */}
                             <a
                                 href="https://github.com"
-                                className={`inline-flex items-center justify-center h-9 w-9 rounded-md transition-colors duration-300 ${isDark ? 'hover:bg-gray-900/50' : 'hover:bg-gray-200'
+                                target="_blank" rel="noopener noreferrer"
+                                className={`inline-flex items-center justify-center h-9 w-9 rounded-md transition-colors duration-300 ${isDark ? 'hover:bg-gray-700/50' : 'hover:bg-gray-200'
                                     }`}
                             >
                                 <Github size={20} className={isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-black'} />
@@ -102,7 +103,7 @@ export function Nav() {
                             {/* Theme Toggle */}
                             <button
                                 onClick={toggleTheme}
-                                className={`inline-flex items-center justify-center h-9 w-9 rounded-md transition-colors duration-300 ${isDark ? 'hover:bg-gray-900/50' : 'hover:bg-gray-200'
+                                className={`inline-flex items-center justify-center h-9 w-9 rounded-md transition-colors duration-300 ${isDark ? 'hover:bg-gray-700/50' : 'hover:bg-gray-200'
                                     }`}
                             >
                                 {isDark ? (
